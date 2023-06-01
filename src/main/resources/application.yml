@@ -1,0 +1,69 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: MicroserviceUniteEnseignement
+          uri:
+            lb://MicroserviceUniteEnseignement
+          predicates:
+            - Path=/MicroSemestre/**
+
+        - id: MicroserviceUniteEnseignement
+          uri:
+            lb://MicroserviceUniteEnseignement
+          predicates:
+            - Path=/MicroUe/**
+
+        - id: MicroserviceClasse
+          uri:
+            lb://MicroserviceClasse
+          predicates:
+            - Path=/MicroClasse/**
+
+        - id: MicroserviceSalle
+          uri:
+            lb://MicroserviceSalle
+          predicates:
+            - Path=/MicroSalle/**
+
+        - id: microserviceEnseignant
+          uri:
+            lb://microserviceEnseignant
+          predicates:
+            - Path=/MicroEnseignant/**
+
+        - id: MicroserviceFiche
+          uri:
+            lb://MicroserviceFiche
+          predicates:
+            - Path=/MicroFiche/**
+
+        - id: MicroserviceAdmin
+          uri:
+            lb://MicroserviceAdmin
+          predicates:
+            - Path=/MicroAdmin/**
+
+        - id: microserviceDelegue
+          uri:
+            lb://microserviceDelegue
+          predicates:
+            - Path=/MicroDelegue/**
+
+        - id: MicroserviceProgramme
+          uri:
+            lb://MicroserviceProgramme
+          predicates:
+            - Path=/MicroJour/**
+
+        - id: MicroserviceProgramme
+          uri:
+            lb://MicroserviceProgramme
+          predicates:
+            - Path=/MicroSeance/**
+
+        - id: MicroserviceProgramme
+          uri:
+            lb://MicroserviceProgramme
+          predicates:
+            - Path=/MicroProg/**
