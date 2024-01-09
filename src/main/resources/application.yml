@@ -2,6 +2,8 @@ spring:
   cloud:
     gateway:
       routes:
+  # LOCAL:
+
         - id: REMD_users
           uri: http://localhost:9003
           predicates:
@@ -21,5 +23,39 @@ spring:
           uri: http://localhost:9001
           predicates:
             - Path=/articles/**
+
+        - id: REMD_articles_images
+          uri:
+            http://localhost:9001
+          predicates:
+            - Path=/photo/**
+
+# DEPLOYED :
+
+        - id: REMD_users_deployed
+          uri: http://users:9003
+          predicates:
+            - Path=/user/**
+
+        - id: REMD_notifications_deployed
+          uri: http://notifications:9002
+          predicates:
+            - Path=/notification/**
+
+        - id: REMD_annonces_deployed
+          uri: http://annonces:9000
+          predicates:
+            - Path=/annonces/**
+
+        - id: REMD_articles_deployed
+          uri: http://articles:9001
+          predicates:
+            - Path=/articles/**
+
+        - id: REMD_articles_images_deployed
+          uri:
+            http://articles:9001
+          predicates:
+            - Path=/photo/**
 
 
