@@ -36,7 +36,10 @@ spring:
           uri: http://users:9003
           predicates:
             - Path=/user/**
-
+        - id: REMD_eureka_deployed
+          uri: http://eureka:9003
+          predicates:
+            - Path=/**
         - id: REMD_notifications_deployed
           uri: http://notifications:9002
           predicates:
